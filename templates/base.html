@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% load static tailwind_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/favicon-32x32.png' %}">
+  
+    <title>Frontend Mentor | Space tourism website</title>
+    {% tailwind_css %}
+</head>
+<body>
+    {% block content %}
+        <!-- Content -->
+    {% endblock %}
+    
+</body>
+</html>
