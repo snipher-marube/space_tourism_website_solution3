@@ -1,0 +1,111 @@
+{% load static tailwind_tags %}
+<style>
+    /* Hamburger Menu */
+.hamburger {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    transition: all 0.25s;
+    position: relative;
+  }
+  
+  .hamburger-top,
+  .hamburger-middle,
+  .hamburger-bottom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background: #fff;
+    transform: rotate(0);
+    transition: all 0.5s;
+  }
+  
+  .hamburger-middle {
+    transform: translateY(7px);
+  }
+  
+  .hamburger-bottom {
+    transform: translateY(14px);
+  }
+  
+  .open {
+    transform: rotate(90deg);
+    transform: translateY(0px);
+  }
+  
+  .open .hamburger-top {
+    transform: rotate(45deg) translateY(6px) translate(6px);
+  }
+  
+  .open .hamburger-middle {
+    display: none;
+  }
+  
+  .open .hamburger-bottom {
+    transform: rotate(-45deg) translateY(6px) translate(-6px);
+  }
+</style>
+
+<nav class="relative">
+    <div class="absolute container mx-auto p-10 inset-x-0 md:flex md:justify-between items-center">
+        <!--logo with margin-right for spacing-->
+        <div class=" text-white mr-4">Logo</div>
+        <!--menu with margin-left for spacing-->
+        <div class="hidden text-gray-200 md:flex ml-4 bg-transparent backdrop-blur-lg py-6 px-10">
+            <a href="#" class="p-2 hover:underline  hover:text-gray-300">
+                <span class="font-bold p-1">00</span>HOME
+            </a>
+            <a href="#" class="p-2 hover:underline  hover:text-gray-300">
+                <span class="font-bold p-1">01</span>DESTINATION
+            </a>
+            <a href="#" class="p-2 hover:underline  hover:text-gray-300">
+                <span class="font-bold p-1">02</span>CREW
+            </a>
+            <a href="#" class="p-2 hover:underline  hover:text-gray-300">
+                <span class="font-bold p-1">03</span>TECHNOLOGY
+            </a> 
+        </div>
+
+
+        <!--humberger icon-->
+        
+        <button id="menu-btn" class="absolute text-whiteblock hamburger md:hidden focus:outline-none">
+            <span class="hamburger-top"></span>
+            <span class="hamburger-middle"></span>
+            <span class="hamburger-bottom"></span>
+        </button>
+
+        <!--mobile menu-->
+        <div class="md:hidden">
+            <div id="menu" class="absolute flex-col hidden items-center space-y-6 self-end mt-10 font-bold bg-transparent text-white backdrop-blur-lg left-6 right-6 drop-shadow-md sm:w-auto sm:self-center">
+                <a href="#" class="p-2 hover:underline  hover:text-gray-300">
+                    <span class="font-bold p-1">00</span>HOME
+                </a>
+                <a href="#" class="p-2 hover:underline  hover:text-gray-300">
+                    <span class="font-bold p-1">01</span>DESTINATION
+                </a>
+                <a href="#" class="p-2 hover:underline  hover:text-gray-300">
+                    <span class="font-bold p-1">02</span>CREW
+                </a>
+                <a href="#" class="p-2 hover:underline  hover:text-gray-300">
+                    <span class="font-bold p-1">03</span>TECHNOLOGY
+                </a>
+            </div>
+        </div>
+
+    </div>
+</nav>
+
+<script>
+
+    const btn = document.getElementById('menu-btn')
+    const nav = document.getElementById('menu')
+
+    btn.addEventListener('click', () => {
+        btn.classList.toggle('open')
+        nav.classList.toggle('flex')
+        nav.classList.toggle('hidden')
+    })
+</script>

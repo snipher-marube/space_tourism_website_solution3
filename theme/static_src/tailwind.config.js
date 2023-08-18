@@ -42,7 +42,18 @@ module.exports = {
         // '../../**/*.py'
     ],
     theme: {
-        extend: {},
+        extend: {
+            // custom family fonts
+            fontFamily: {
+                Inter: ['Inter', 'sans-serif'],
+                Poppins: ['Poppins', 'sans-serif'],
+                Ubuntu: ['Ubuntu', 'sans-serif'],
+                Montserrat: ['Montserrat', 'sans-serif'],
+                Roboto: ['Roboto', 'sans-serif'],
+                Nunito: ['Nunito', 'sans-serif'],
+
+            }
+        },
     },
     plugins: [
         /**
